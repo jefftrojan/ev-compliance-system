@@ -1,9 +1,18 @@
-
-.container {
-    padding: 20px;
+body {
+    margin: 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
   }
   
-  .card {
+.container {
+    padding: 20px;
+    max-width: 600px;
+  }
+
+  
+.card {
     padding: 20px;
     text-align: center;
     color: #333;
