@@ -4,19 +4,19 @@ import './complianceSystem.css';
 
 const EnvironmentalComplianceSystem = () => {
   const [sensorData, setSensorData] = useState({
-    airQuality: '--',
-    co2Emission: '--',
-    humidity: '--',
-    temperature: '--',
-    noiseLevel: '--',
+    airQuality: 10,
+    co2Emission: 10,
+    humidity: 10,
+    temperature: 10,
+    noiseLevel: 10,
   });
   const [complianceScale, setComplianceScale] = useState('--');
   const [colorProfile, setColorProfile] = useState('--');
 
   const fetchSensorData = async () => {
     try {
-      const authToken = "YOUR_API_AUTH_TOKEN"; // Replace with your Arduino Cloud API token
-      const deviceId = "YOUR_DEVICE_ID"; // Replace with your Arduino IoT device ID
+      const authToken = ""; //
+      const deviceId = ""; // 
 
       const response = await axios.get(`https://api2.arduino.cc/iot/v2/devices/${deviceId}/properties`, {
         headers: {
@@ -78,6 +78,15 @@ const EnvironmentalComplianceSystem = () => {
       <div className="card">
         <p>Compliance Score: <span className="value">{complianceScale}</span></p>
         <p>Color Profile: <span className="value">{colorProfile}</span></p>
+      </div>
+      <div>
+        <hr />
+        <p>Compliance Scale Ranges:</p>
+        <ul>
+          <li>1-5: Compliant (Green)</li>
+          <li>6-7: Moderate Compliant (Blue)</li>
+          <li>8-10: Non-Compliant (Red)</li>
+        </ul>
       </div>
     </div>
   );
